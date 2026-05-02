@@ -1,7 +1,13 @@
 name: Frontend CI
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/**'
   pull_request:
+    types: [opened, synchronize, reopened]
     paths:
       - 'frontend/**'
 
@@ -13,7 +19,9 @@ jobs:
         working-directory: frontend
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -30,3 +38,8 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@fd88b7d7ccbaefd23d8f36f73b59db7a3d246602 # v6.0.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
