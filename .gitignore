@@ -1,0 +1,96 @@
+# ========================
+# Java / Spring / Gradle
+# ========================
+build/
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Spring Boot
+*.pid
+
+# Logs
+*.log
+logs/
+log/
+
+# ========================
+# React / Node
+# ========================
+node_modules/
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+
+# Cache
+.npm
+.eslintcache
+.stylelintcache
+.parcel-cache
+.vite/
+
+# Storybook
+frontend/storybook-out/
+
+# ========================
+# Секреты и окружение
+# ========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# ========================
+# IDE / Редакторы
+# ========================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# Eclipse
+.project
+.classpath
+.settings/
+*.launch
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ========================
+# Тесты и покрытие
+# ========================
+coverage/
+.nyc_output/
+frontend/coverage/
+backend/build/reports/
+
+# ========================
+# SonarQube
+# ========================
+.sonar/
+.scannerwork/
